@@ -7,6 +7,12 @@ public class FindElement{
         int lIndex = findLastOccurence(arr,idx,2);
 
         System.out.println("First Occ: " + fIndex + " last Index: "+lIndex);
+
+        System.out.println("All Occurences");
+        int [] resArr = allOccurence(arr,idx,0,2);
+        for(int res:resArr){
+            System.out.println(res);
+        }
     }
     public static int findFirstOccurence(int []arr, int idx, int element){
         if(idx==arr.length){
@@ -34,5 +40,18 @@ public class FindElement{
             }
         }
 
+    }
+    public static int[] allOccurence(int []arr, int idx, int fsf,int ele){
+        if(idx==arr.length){
+            return new int[fsf];
+        }
+        if(arr[idx] == ele){
+            int iarr[] = allOccurence(arr,idx+1,fsf+1,ele);
+            iarr[fsf] = idx;
+            return iarr;
+        } else {
+            int iarr[] = allOccurence(arr,idx+1,fsf,ele);
+            return iarr;
+        }
     }
 }
