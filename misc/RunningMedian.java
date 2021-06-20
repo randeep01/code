@@ -16,6 +16,12 @@ public class RunningMedian{
             addElement(1);
             Tuple<Integer,Integer> ret = getMedian();
             printTuple(ret);
+             addElement(2);
+             ret = getMedian();
+            printTuple(ret);
+            addElement(3);
+             ret = getMedian();
+            printTuple(ret);
         }catch(Exception ex){
             System.out.println(ex.getMessage());
             ex.printStackTrace();
@@ -45,9 +51,9 @@ public class RunningMedian{
             return new Tuple<Integer,Integer>(left.size()>right.size()?left.peek():right.peek(),null);
         }
     }
-    public static void printTuple(Tuple<A,B> tup){
+    public static void printTuple(Tuple<? extends Integer,? extends Integer> tup){
         if(tup.b==null){
-            System.out.println("median of off elelemt " + tup.a);
+            System.out.println("median of odd element  " + tup.a);
         } else {
             System.out.println("median of even elements " + tup.a + "," + tup.b );
         }
