@@ -27,10 +27,12 @@ public class GridWithJump {
         
         for (int i = 1; i < (dr-sr);i++){
             //System.out.println("11");
+            System.out.println("1");
             printMazePaths(sr+i,sc,dr,dc,"v"+i+psf);
         }
         
         for (int i = 1; i < (dc-sc);i++){
+            System.out.println("2");
             printMazePaths(sr,sc+i,dr,dc,"h"+i+psf);
         }
         
